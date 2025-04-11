@@ -8,12 +8,28 @@ git clone https://github.com/7ukas/kitm-work-rest-api.git
 
 **Create MySQL database**
 ```bash
-CREATE DATABASE work
+CREATE DATABASE work;
+USE work;
+```
+
+**Create new table**
+```bash
+CREATE TABLE `work` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `work_type` varchar(64) DEFAULT NULL,
+  `work_desc` varchar(128) DEFAULT NULL,
+  `hours_worked` int DEFAULT NULL,
+  `worker_name` varchar(64) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `last_updated` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
 ```
 
 **Adjust database credentials**
 
-+ Open `src/main/resources/application.properties` and change `spring.datasource.username` and/or `spring.datasource.password` accordingly.
++ Open `src/main/resources/application.properties`
++ Adjust `spring.datasource.url`, `spring.datasource.username` and `spring.datasource.password` accordingly.
 
 **Run application**
 
